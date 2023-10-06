@@ -1,13 +1,14 @@
-import React from 'react'
-
 type Props = {
-    title: string
-}
+    reqType: string,
+    setReqType: (arg: string) => void,
 
-const Header = (props: Props) => {
+}
+const Header = ({ reqType, setReqType }: Props) => {
     return (
-        <header className='Header'>
-            <h1>{props.title}</h1>
+        <header>
+            <button onClick={() => setReqType("users")}>users</button>
+            <button onClick={() => setReqType("posts")}>posts</button>
+            <button onClick={() => setReqType("comments")}>comments</button>
         </header>
     )
 }
